@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gustavo Souza</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="topo-hero">
+      <div class="idiomas">
+        <button class="btn-idioma ativo" data-idioma="pt" title="Português" aria-label="Português">
+          <img src="assets/br.svg" alt="Português" />
+        </button>
+        <button class="btn-idioma" data-idioma="en" title="English" aria-label="English" >
+          <img src="assets/us.svg" alt="English">
+        </button>
+      </div>
+
+      <a id="btnDownload" href="assets/Curriculo-pt.pdf" download class="btn-download">
+        📄 <span data-i18n="baixar">Baixar Currículo</span>
+      </a>
+    </div>
+
+    <div class="avatar-wrapper">
+  <img 
+    src="assets/fotoperfil.png" 
+    alt="Foto de perfil" 
+    class="avatar" 
+    id="fotoPerfil"
+  />
+  <div class="avatar-fallback" id="avatarFallback">GS</div>
+</div>
+    <h1>Gustavo Souza</h1>
+    <p class="cargo" data-i18n="cargo">Desenvolvedor Full Stack</p>
+
+    <div class="links-sociais">
+      <a href="https://www.linkedin.com/in/souzagustavo42/?isSelfProfile=true" target="_blank">LinkedIn</a>
+      <a href="https://github.com/oronwo" target="_blank">GitHub</a>
+      <a href="mailto:gustavosouza.42@outlook.com">E-mail</a>
+    </div>
+  </header>
+
+  <nav class="abas">
+    <button class="aba-btn ativo" data-aba="sobre" data-i18n="abaSobre">Sobre</button>
+    <button class="aba-btn" data-aba="experiencia" data-i18n="abaExp">Experiência</button>
+    <button class="aba-btn" data-aba="formacao" data-i18n="abaForm">Formação</button>
+    <button class="aba-btn" data-aba="habilidades" data-i18n="abaHab">Habilidades</button>
+    <button class="aba-btn" data-aba="projetos" data-i18n="abaProj">Projetos</button>
+  </nav>
+
+  <main class="conteudo">
+
+    <section id="sobre" class="aba-conteudo ativo">
+      <h2 data-i18n="tituloSobre">Sobre mim</h2>
+      <p data-i18n="textoSobre">
+        Olá! Sou desenvolvedor apaixonado por tecnologia, com experiência em
+        criação de aplicações web modernas e escaláveis. Busco sempre aprender
+        novas ferramentas e boas práticas de desenvolvimento.
+      </p>
+    </section>
+
+    <section id="experiencia" class="aba-conteudo">
+      <h2 data-i18n="tituloExp">Experiência Profissional</h2>
+
+      <div class="item">
+        <h3 data-i18n="exp1Cargo">Assistente Fiscal</h3>
+        <span class="periodo">2022 - 2026</span>
+        <p class="empresa">Reframax Engenharia LTDA</p>
+        <ul>
+          <li data-i18n="exp1t1">Controle de documentos fiscais</li>
+          <li data-i18n="exp1t2">Operação do sistema TOTVS-RM Nucleus</li>
+          <li data-i18n="exp1t3">Acompanhamento de chamados para aquisição de suprimentos</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3 data-i18n="exp2Cargo">Estagiário Administrativo</h3>
+        <span class="periodo">2018 - 2019</span>
+        <p class="empresa">Secretaria do Estado da Saúde ES</p>
+        <ul>
+          <li data-i18n="exp2t1">Apuração, catálogo e documentação de processos legais</li>
+          <li data-i18n="exp2t2">Trânsito de processos entre sedes da Secretaria</li>
+          <li data-i18n="exp2t3">Assistência tecnológica T1 direcionada aos funcionários da Secretaria</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h3 data-i18n="exp3Cargo">Assistente de TI</h3>
+        <span class="periodo">2017 - 2018</span>
+        <p class="empresa">Adcos Participações LTDA</p>
+        <ul>
+          <li data-i18n="exp3t1">Assistência técnica T1 direcionada as lojas via acesso remoto</li>
+          <li data-i18n="exp3t2">Assistência técnica via Service Desk aos funcionários da empresa</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="formacao" class="aba-conteudo">
+      <h2 data-i18n="tituloForm">Formação Acadêmica</h2>
+
+      <div class="item">
+        <h3 data-i18n="form1">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+        <span class="periodo">2026 - 2029</span>
+        <p class="empresa">Centro Universitário FAESA</p>
+      </div>
+    </section>
+
+    <section id="habilidades" class="aba-conteudo">
+      <h2 data-i18n="tituloHab">Habilidades</h2>
+      <div class="skills">
+        <span>Fluent English</span>
+        <span>Python</span>
+        <span>Git</span>
+      </div>
+    </section>
+
+    <section id="projetos" class="aba-conteudo">
+      <h2 data-i18n="tituloProj">Projetos</h2>
+
+      <div class="item">
+        <h3 data-i18n="proj1">Portfólio Pessoal</h3>
+        <p data-i18n="proj1Desc">Site responsivo criado com HTML, CSS e JavaScript.</p>
+        <a href="https://github.com/seu-usuario/portfolio" target="_blank" data-i18n="verGit">
+          Ver no GitHub →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <span data-i18n="direitos">Gustavo Souza. Todos os direitos reservados.</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
