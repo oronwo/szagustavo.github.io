@@ -8,49 +8,44 @@
 </head>
 <body>
 
-  <header class="hero">
-    <div class="topo-hero">
-      <div class="idiomas">
-        <button class="btn-idioma ativo" data-idioma="pt" title="Português" aria-label="Português">
-          <img src="assets/br.svg" alt="Português" />
-        </button>
-        <button class="btn-idioma" data-idioma="en" title="English" aria-label="English" >
-          <img src="assets/us.svg" alt="English">
-        </button>
-      </div>
-
-      <a id="btnDownload" href="assets/Curriculo-pt.pdf" download class="btn-download">
-        📄 <span data-i18n="baixar">Baixar Currículo</span>
-      </a>
+  <aside class="sidebar">
+    <div class="idiomas">
+      <button class="btn-idioma ativo" data-idioma="pt" title="Português" aria-label="Português">
+        <img src="assets/br.svg" alt="Português" />
+      </button>
+      <button class="btn-idioma" data-idioma="en" title="English" aria-label="English">
+        <img src="assets/us.svg" alt="English" />
+      </button>
     </div>
 
     <div class="avatar-wrapper">
-  <img 
-    src="assets/fotoperfil.png" 
-    alt="Foto de perfil" 
-    class="avatar" 
-    id="fotoPerfil"
-  />
-  <div class="avatar-fallback" id="avatarFallback">GS</div>
-</div>
+      <img src="assets/fotoperfil.png" alt="Foto de perfil" class="avatar" id="fotoPerfil" />
+      <div class="avatar-fallback" id="avatarFallback">GS</div>
+    </div>
+
     <h1>Gustavo Souza</h1>
     <p class="cargo" data-i18n="cargo">Desenvolvedor Full Stack</p>
+
+    <nav class="abas">
+      <button class="aba-btn ativo" data-aba="sobre" data-i18n="abaSobre">Sobre</button>
+      <button class="aba-btn" data-aba="experiencia" data-i18n="abaExp">Experiência</button>
+      <button class="aba-btn" data-aba="formacao" data-i18n="abaForm">Formação</button>
+      <button class="aba-btn" data-aba="habilidades" data-i18n="abaHab">Habilidades</button>
+      <button class="aba-btn" data-aba="projetos" data-i18n="abaProj">Projetos</button>
+    </nav>
 
     <div class="links-sociais">
       <a href="https://www.linkedin.com/in/souzagustavo42/?isSelfProfile=true" target="_blank">LinkedIn</a>
       <a href="https://github.com/oronwo" target="_blank">GitHub</a>
       <a href="mailto:gustavosouza.42@outlook.com">E-mail</a>
     </div>
-  </header>
 
-  <nav class="abas">
-    <button class="aba-btn ativo" data-aba="sobre" data-i18n="abaSobre">Sobre</button>
-    <button class="aba-btn" data-aba="experiencia" data-i18n="abaExp">Experiência</button>
-    <button class="aba-btn" data-aba="formacao" data-i18n="abaForm">Formação</button>
-    <button class="aba-btn" data-aba="habilidades" data-i18n="abaHab">Habilidades</button>
-    <button class="aba-btn" data-aba="projetos" data-i18n="abaProj">Projetos</button>
-  </nav>
+    <a id="btnDownload" href="assets/Curriculo-pt.pdf" download class="btn-download">
+      📄 <span data-i18n="baixar">Baixar Currículo</span>
+    </a>
+  </aside>
 
+  <div class="pagina">
   <main class="conteudo">
 
     <section id="sobre" class="aba-conteudo ativo">
@@ -134,6 +129,7 @@
   <footer>
     <p>© 2026 <span data-i18n="direitos">Gustavo Souza. Todos os direitos reservados.</span></p>
   </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

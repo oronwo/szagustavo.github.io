@@ -1,17 +1,37 @@
 const botoes = document.querySelectorAll('.aba-btn');
-const conteudos = document.querySelectorAll('.aba-conteudo');
+const secoes = document.querySelectorAll('.aba-conteudo');
 
+function marcarAba(id) {
+  botoes.forEach(b => b.classList.toggle('ativo', b.dataset.aba === id));
+}
+
+// Clique no menu: rola suavemente até a seção
 botoes.forEach(botao => {
   botao.addEventListener('click', () => {
-    const alvo = botao.dataset.aba;
-
-    botoes.forEach(b => b.classList.remove('ativo'));
-    conteudos.forEach(c => c.classList.remove('ativo'));
-
-    botao.classList.add('ativo');
-    document.getElementById(alvo).classList.add('ativo');
+    const alvo = document.getElementById(botao.dataset.aba);
+    alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    marcarAba(botao.dataset.aba);
   });
 });
+
+// Ao rolar: destaca no menu a seção que está na tela
+function atualizarAbaAtiva() {
+  const chegouNoFim = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+  let atual = secoes[0].id;
+
+  if (chegouNoFim) {
+    atual = secoes[secoes.length - 1].id;
+  } else {
+    secoes.forEach(s => {
+      if (s.getBoundingClientRect().top <= window.innerHeight * 0.35) atual = s.id;
+    });
+  }
+  marcarAba(atual);
+}
+
+window.addEventListener('scroll', atualizarAbaAtiva, { passive: true });
+window.addEventListener('resize', atualizarAbaAtiva);
+atualizarAbaAtiva();
 
 const traducoes = {
   pt: {
