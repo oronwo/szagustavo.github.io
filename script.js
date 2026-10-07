@@ -59,7 +59,7 @@ const traducoes = {
 
     tituloSobre: 'Sobre mim',
     textoSobre:
-      'Olá! Sou um estudante apaixonado por tecnologia, com experiência profissional em suporte técnico tanto em hardware como software, atualmente aprimorando minhas habilidades no meio da programação e desenvolvimento de aplicações, buscando sempre adaptação para aprendizado e otimização dos meios os quais atuo.',
+      'Olá! Sou um estudante fascinado pela tecnologia, com experiência profissional em suporte técnico tanto de hardware como software, atualmente aprimorando minhas habilidades no meio da programação e desenvolvimento de aplicações, buscando sempre adaptação para aprendizado e otimização dos meios os quais atuo.',
 
     tituloExp: 'Experiência Profissional',
     exp1Cargo: 'Assistente Fiscal',
