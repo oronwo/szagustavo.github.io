@@ -1,6 +1,10 @@
 const botoes = document.querySelectorAll('.aba-btn');
 const secoes = document.querySelectorAll('.aba-conteudo');
 
+// Aba clicada fica "travada" até o usuário rolar por conta própria,
+// porque seções curtas no fim da página nem sempre conseguem chegar ao topo
+let abaTravada = null;
+
 function marcarAba(id) {
   botoes.forEach(b => b.classList.toggle('ativo', b.dataset.aba === id));
 }
@@ -9,17 +13,21 @@ function marcarAba(id) {
 botoes.forEach(botao => {
   botao.addEventListener('click', () => {
     const alvo = document.getElementById(botao.dataset.aba);
+    abaTravada = botao.dataset.aba;
     alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    marcarAba(botao.dataset.aba);
+    marcarAba(abaTravada);
   });
 });
 
 // Ao rolar: destaca no menu a seção que está na tela
 function atualizarAbaAtiva() {
+  if (abaTravada) return;
   const chegouNoFim = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
   let atual = secoes[0].id;
 
-  if (chegouNoFim) {
+  if (window.scrollY <= 4) {
+    atual = secoes[0].id;
+  } else if (chegouNoFim) {
     atual = secoes[secoes.length - 1].id;
   } else {
     secoes.forEach(s => {
@@ -28,6 +36,12 @@ function atualizarAbaAtiva() {
   }
   marcarAba(atual);
 }
+
+['wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(evento => {
+  window.addEventListener(evento, () => {
+    abaTravada = null;
+  }, { passive: true });
+});
 
 window.addEventListener('scroll', atualizarAbaAtiva, { passive: true });
 window.addEventListener('resize', atualizarAbaAtiva);
